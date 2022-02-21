@@ -29,7 +29,7 @@ The main interface is the `Jascha030\Twig\TwigServiceInterface`, which requires 
 
 **getEnvironment**
 
-Returns a TwigEnvironment.
+Get the TwigEnvironment.
 
 `TwigServiceInterface::getEnvironment(): \Twig\Environment`
 
@@ -48,11 +48,25 @@ without having to refactor your codebase, for example, by using a DIC.
 
 **renderString**
 
+Render a template and return output as string.
+
 `TemplaterInterface::renderString(string $template, array $context = []): string`
+
+* parameters
+    * `$template` (string): the twig template name.
+    * `$context` (array): key `=>` pair values corresponding to the template variables.
+* returns the rendered template as `string`
 
 **render**
 
+Render and output a template.
+
 `TemplaterInterface::render(string $template, array $context = []): void`
+
+* parameters
+    * `$template` (string): the twig template name.
+    * `$context` (array): key `=>` pair values corresponding to the template variables.
+* returns `void` (output is expected to be echoed).
 
 ### Default Implementation
 
