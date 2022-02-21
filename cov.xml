@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1645444046">
+  <project timestamp="1645444046">
+    <file name="/Users/jaschavanaalst/.development/Projects/Composer/twig-service/src/Templater/TemplaterInterface.php">
+      <metrics loc="30" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <file name="/Users/jaschavanaalst/.development/Projects/Composer/twig-service/src/TwigService.php">
+      <class name="Jascha030\Twig\TwigService" namespace="global">
+        <metrics complexity="4" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
+      </class>
+      <line num="30" type="method" name="getEnvironment" visibility="public" complexity="1" crap="1" count="3"/>
+      <line num="32" type="stmt" count="3"/>
+      <line num="42" type="method" name="renderString" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="44" type="stmt" count="2"/>
+      <line num="54" type="method" name="render" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="56" type="stmt" count="1"/>
+      <metrics loc="58" ncloc="32" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
+    </file>
+    <file name="/Users/jaschavanaalst/.development/Projects/Composer/twig-service/src/TwigServiceInterface.php">
+      <metrics loc="25" ncloc="13" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
+    </file>
+    <metrics files="3" loc="113" ncloc="57" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="3" coveredstatements="3" elements="6" coveredelements="6"/>
+  </project>
+</coverage>
