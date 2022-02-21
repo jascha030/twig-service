@@ -21,7 +21,7 @@ use Twig\Loader\FilesystemLoader;
  */
 final class TwigServiceTest extends TestCase
 {
-    private const TEMPLATE_DIR         = __DIR__ . '/Fixtures/templates';
+    private const TEMPLATE_DIR = __DIR__ . '/Fixtures/templates';
 
     private const EXPECTED_RESULTS_DIR = __DIR__ . '/Fixtures/result';
 
@@ -95,7 +95,7 @@ final class TwigServiceTest extends TestCase
      */
     public function testRenderString(TwigServiceInterface $service): string
     {
-        $expected = file_get_contents(self::EXPECTED_RESULTS_DIR . '/expected.html');
+        $expected             = file_get_contents(self::EXPECTED_RESULTS_DIR . '/expected.html');
         [$template, $context] = $this->getTemplateData();
 
         $output = $service->renderString($template, $context);
@@ -133,7 +133,7 @@ final class TwigServiceTest extends TestCase
             'Environment with FilesystemLoader' => [
                 new Environment(new FilesystemLoader(self::TEMPLATE_DIR)),
             ],
-            'Environment with ArrayLoader'      => [
+            'Environment with ArrayLoader' => [
                 new Environment(new ArrayLoader([
                     'template.html.twig' => '<p>Hello {{ location }}!</p>',
                 ])),
