@@ -1,0 +1,4 @@
+oparameters:
+  level: max
+  paths:
+    - src

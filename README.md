@@ -84,7 +84,7 @@ use Twig\Environment;
 use Jascha030\Twig\TwigService;
 
 /**
- * Include Composer's autoloader. 
+ * Include Composer's autoloader.
  */
 include __DIR__ . '/vendor/autoload.php';
 
