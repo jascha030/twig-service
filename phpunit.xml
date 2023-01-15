@@ -30,8 +30,8 @@
             <directory suffix=".php">src</directory>
         </include>
         <report>
-            <clover outputFile=".var/cache/phpunit/cov.xml" />
-            <text outputFile="php://stdout" />
+            <clover outputFile=".var/cache/phpunit/cov.xml"/>
+            <text outputFile="php://stdout"/>
         </report>
     </coverage>
 </phpunit>

@@ -17,12 +17,16 @@ interface TemplaterInterface
     /**
      * Render a template and return output as string.
      *
+     * @param array<string|int,mixed> $context
+     *
      * @since  1.0.0
      */
     public function renderString(string $template, array $context = []): string;
 
     /**
      * Render and output a template.
+     *
+     * @param array<string|int,mixed> $context
      *
      * @since 1.0.0
      */
