@@ -14,14 +14,19 @@
         "Service",
         "DIC"
     ],
+    "config": {
+        "platform-check": false,
+        "platform": {
+            "php": "8.0.2"
+        },
+        "sort-packages": true
+    },
     "minimum-stability": "stable",
     "require": {
         "php": "^8",
         "twig/twig": "^3.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5",
-        "friendsofphp/php-cs-fixer": "^3.6",
         "roave/security-advisories": "dev-latest"
     },
     "autoload": {
@@ -31,11 +36,15 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Jascha030\\Twig\\Tests\\": "tests/"
+            "Jascha030\\Twig\\": "tests/"
         }
     },
     "scripts": {
-        "format": "php-cs-fixer fix --config=.php-cs-fixer.dist.php",
-        "phpunit": "phpunit --config phpunit.xml"
+        "phpunit": "tools/phpunit.phar",
+        "php-cs-fixer": "tools/php-cs-fixer",
+        "phpstan": "tools/phpstan",
+        "format": "@php-cs-fixer fix --config=.php-cs-fixer.php",
+        "test": "@phpunit -c phpunit.xml",
+        "analyze": "@phpstan analyze -c phpstan.neon"
     }
 }
