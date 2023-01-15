@@ -3,7 +3,7 @@
 
 declare(strict_types=1);
 
-namespace Jascha030\Twig\Tests;
+namespace Jascha030\Twig;
 
 use Jascha030\Twig\TwigService;
 use Jascha030\Twig\TwigServiceInterface;
