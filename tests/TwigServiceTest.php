@@ -5,8 +5,6 @@ declare(strict_types=1);
 
 namespace Jascha030\Twig;
 
-use Jascha030\Twig\TwigService;
-use Jascha030\Twig\TwigServiceInterface;
 use PHPUnit\Framework\TestCase;
 use Twig\Environment;
 use Twig\Loader\ArrayLoader;
@@ -17,7 +15,7 @@ use Twig\Loader\FilesystemLoader;
  *
  * @internal
  *
- * @since  1.0.0
+ * @since  1.2.0
  */
 final class TwigServiceTest extends TestCase
 {
@@ -25,7 +23,7 @@ final class TwigServiceTest extends TestCase
 
     private const EXPECTED_RESULTS_DIR = __DIR__ . '/Fixtures/result';
 
-    private static ?Environment $defaultEnvironment;
+    private static Environment|null $defaultEnvironment;
 
     private static array $templateData = [
         'template' => 'template.html.twig',
@@ -37,7 +35,7 @@ final class TwigServiceTest extends TestCase
      *
      * @see   Environment
      * @see   FilesystemLoader
-     * @since 1.0.0
+     * @since 1.2.0
      */
     public static function setUpBeforeClass(): void
     {
@@ -47,7 +45,7 @@ final class TwigServiceTest extends TestCase
     /**
      * {@inheritDoc}
      *
-     * @since 1.0.0
+     * @since 1.2.0
      */
     public static function tearDownAfterClass(): void
     {
@@ -57,7 +55,7 @@ final class TwigServiceTest extends TestCase
     /**
      * @dataProvider environmentProvider
      *
-     * @since        1.0.0
+     * @since        1.2.0
      */
     public function testConstructWithLoaders(Environment $environment): void
     {
@@ -67,7 +65,7 @@ final class TwigServiceTest extends TestCase
     /**
      * @depends testConstructWithLoaders
      *
-     * @since   1.0.0
+     * @since   1.2.0
      */
     public function testConstruct(): TwigServiceInterface
     {
@@ -81,7 +79,7 @@ final class TwigServiceTest extends TestCase
     /**
      * @depends testConstruct
      *
-     * @since   1.0.0
+     * @since   1.2.0
      */
     public function testGetEnvironment(TwigServiceInterface $service): void
     {
@@ -91,7 +89,7 @@ final class TwigServiceTest extends TestCase
     /**
      * @depends      testConstruct
      *
-     * @since        1.0.0
+     * @since        1.2.0
      */
     public function testRenderString(TwigServiceInterface $service): string
     {
@@ -108,7 +106,7 @@ final class TwigServiceTest extends TestCase
      * @depends      testConstruct
      * @depends      testRenderString
      *
-     * @since        1.0.0
+     * @since        1.2.0
      */
     public function testRender(TwigServiceInterface $service, string $expected): void
     {
@@ -125,7 +123,7 @@ final class TwigServiceTest extends TestCase
      *
      * @see   FilesystemLoader
      * @see   ArrayLoader
-     * @since 1.0.0
+     * @since 1.2.0
      */
     public function environmentProvider(): array
     {
@@ -133,7 +131,7 @@ final class TwigServiceTest extends TestCase
             'Environment with FilesystemLoader' => [
                 new Environment(new FilesystemLoader(self::TEMPLATE_DIR)),
             ],
-            'Environment with ArrayLoader' => [
+            'Environment with ArrayLoader'      => [
                 new Environment(new ArrayLoader([
                     'template.html.twig' => '<p>Hello {{ location }}!</p>',
                 ])),
@@ -144,7 +142,7 @@ final class TwigServiceTest extends TestCase
     /**
      * Provides template name, context array.
      *
-     * @since 1.0.0
+     * @since 1.2.0
      */
     private function getTemplateData(): array
     {
